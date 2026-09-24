@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SikeMod Terminal</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="app">
+    <header>
+        <h1>👑 SikeMod <span>Tool Runner</span></h1>
+        <p class="sub">Upload file · Chạy lệnh · Quản lý tool</p>
+    </header>
+
+    <section class="card">
+        <h2>📤 Upload File</h2>
+        <div class="dropzone" id="dropzone">
+            <input type="file" id="fileInput" hidden>
+            <p>Kéo thả file vào đây hoặc <span class="link">click để chọn</span></p>
+            <p class="hint">Hỗ trợ: py, js, json, csv, sh, zip, tar, txt...</p>
+        </div>
+        <div id="uploadStatus" class="status"></div>
+    </section>
+
+    <section class="card">
+        <h2>📁 File đã upload</h2>
+        <button id="refreshFiles" class="btn-sm">🔄 Refresh</button>
+        <ul id="fileList" class="file-list">
+            <li class="empty">Chưa có file nào</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>💻 Terminal</h2>
+        <div class="terminal" id="terminal">
+            <div class="term-line">SikeMod Terminal v1.0 — gõ lệnh bên dưới</div>
+        </div>
+        <div class="term-input-row">
+            <span class="prompt">$</span>
+            <input type="text" id="cmdInput" placeholder="ls -la" autocomplete="off">
+            <button id="runCmd">▶ Chạy</button>
+        </div>
+        <p class="hint">Timeout 30s. Chạy trong thư mục <code>uploads/</code></p>
+    </section>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+  </html>
